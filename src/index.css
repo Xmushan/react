@@ -4,7 +4,14 @@ body {
     font-family: sans-serif;
     background-color: #fbfbfb;
   }
-  
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container a{
+    margin: 0px 20px;
+  }
   .wrapper {
     width: 500px;
     margin: 10px auto;

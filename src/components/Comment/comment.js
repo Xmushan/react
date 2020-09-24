@@ -1,9 +1,13 @@
 import React from 'react'
 
 export default class Comment extends React.Component{
+    // static propsTypes = {
+    //     comment: this.propsTypes.object.isRequired
+    // }
     constructor(){
         super()
     }
+
     render(){
         return (
             <div className='comment'>

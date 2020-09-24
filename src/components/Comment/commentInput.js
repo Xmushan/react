@@ -19,6 +19,7 @@ export default class CommentInput extends React.Component {
         })
     }
     handleSubmit(){
+        if (this.state.content === '') return
         if (this.props.onSubmit){
             const {username,content} = this.state
             this.props.onSubmit({username,content})

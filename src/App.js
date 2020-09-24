@@ -1,57 +1,30 @@
-// import React,{useState} from 'react';
-// import CommentInput from './components/Comment/commentInput'
-// import CommentList from './components/Comment/commentList'
-
-
-// function CommentApp() {
-
-//   const [comments,setComments] = useState([])
-//   const hanldeSubmitComment = value => {
-//     setComments([
-//       ...comments,
-//       {
-//         ...value
-//       }
-//     ])
-//   }
-//   return (
-//     <div className='wrapper'>
-//       <CommentInput
-//         onSubmit={hanldeSubmitComment}
-//       />
-//       <CommentList comments={comments}/>
-//     </div>
-//   );
-// }
-
-
 import React, { Component } from 'react'
-import CommentInput from './components/Comment/commentInput'
-import CommentList from './components/Comment/commentList'
+import { HashRouter, Route, Link } from "react-router-dom";
+import about from './pages/about';
+import comment from './pages/comment';
+import test from './pages/test';
 
-class CommentApp extends Component {
-  constructor () {
-    super()
-    this.state = {
-      comments: []
-    }
-  }
 
-  handleSubmitComment (comment) {
-    this.state.comments.push(comment)
-    this.setState({
-      comment: this.state.comments
-    })
-  }
 
-  render() {
-    return (
-      <div className='wrapper'>
-        <CommentInput onSubmit={this.handleSubmitComment.bind(this)} />
-        <CommentList comments={this.state.comments}/>
-      </div>
+
+class App extends Component{
+  render(){
+    return(
+      <HashRouter>
+          <div className="container">
+            <h1>路由组件</h1>
+            <Link to="/about">about</Link>
+            <Link to="/test">test</Link>
+            <Link to='/comment'>comment</Link>
+          </div>
+          <Route path="/comment" component={comment}></Route>
+          <Route path="/about" component={about}></Route>
+          <Route path="/test" component={test}></Route>
+      </HashRouter>
+
     )
   }
 }
 
-export default CommentApp
+export default App
+
